@@ -1,7 +1,9 @@
 import PropTypes from "prop-types"
+import { useNavigate } from "react-router-dom"
 const TeamItem =({item={id:1,image:"https://via.placeholder.com/150",name:"example name",description:"example desc"}})=>{
-    return (
-        <div className="card h-100 shadow border-0">
+  const navigate =useNavigate()    
+return (
+        <div className="card h-100 shadow border-0" onClick={()=>navigate(`/team/${item.id}`)}>
         <img src={item.image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title fw-bold">{item.name}</h5>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 const NavBar =()=>{
     return (
        <header className="header sticky-md-top">
@@ -10,16 +11,16 @@ const NavBar =()=>{
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="./index.html">Services</a>
+            <Link className="nav-link" to="/services">Services</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Contact</a>
+            <Link className="nav-link" to="/contact">Contact</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="./faq.html">Faq</a>
+            <Link className="nav-link" to="/faq">Faq</Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
