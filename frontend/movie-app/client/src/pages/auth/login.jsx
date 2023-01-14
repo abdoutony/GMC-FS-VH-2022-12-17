@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeLayout from "../../components/layouts/home";
+import { login } from "../../services/auth.service";
 import "./style.css";
 export default function LoginPage() {
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const handleSubmit = () => {
+    login({ email, password });
+  };
   return (
     <HomeLayout>
       <div className="auth-wrapper pt-5">
@@ -18,6 +24,7 @@ export default function LoginPage() {
                     type="email"
                     placeholder="enter your email"
                     className="form-control"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form-group mt-3">
@@ -26,10 +33,16 @@ export default function LoginPage() {
                     type="password"
                     placeholder="enter your password"
                     className="form-control"
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="form-group mt-3">
-                  <button className="btn bg-red text-white">Sign in</button>
+                  <button
+                    onClick={handleSubmit}
+                    className="btn bg-red text-white"
+                  >
+                    Sign in
+                  </button>
                 </div>
               </div>
             </div>
