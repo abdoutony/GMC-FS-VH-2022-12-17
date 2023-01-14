@@ -8,3 +8,11 @@ export const login = ({ email, password }) => {
     alert("wrong email or password");
   }
 };
+
+export const logout = () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    localStorage.removeItem("token");
+    window.location = "/login";
+  }
+};

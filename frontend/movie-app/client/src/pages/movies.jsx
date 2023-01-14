@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import HomeLayout from "../components/layouts/home";
 import SearchBar from "../components/search-bar";
 import MovieList from "../components/movie-list";
-import { moviesData } from "../data";
+import { moviesData,users,sayHello } from "../data";
+import sayHello2 from "../data";
 export default function MoviesPage() {
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState(null);

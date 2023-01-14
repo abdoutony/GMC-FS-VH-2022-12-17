@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import { logout } from "../../../services/auth.service";
 import "./style.css";
 export const AdminLayout = () => {
   const handleSideBar = (e) => {
@@ -10,7 +11,9 @@ export const AdminLayout = () => {
       e.target.classList.replace("bx-menu-alt-right", "bx-menu");
     }
   };
-
+  const handleLogout = () => {
+    logout();
+  };
   return (
     <div>
       <div className="sidebar bg-gray">
@@ -33,7 +36,10 @@ export const AdminLayout = () => {
           </li>
 
           <li className="log_out">
-            <button className="logoutBtn d-flex align-items-center">
+            <button
+              className="logoutBtn d-flex align-items-center"
+              onClick={handleLogout}
+            >
               <i className="bx bx-log-out" />
               <span className="links_name">Log out</span>
             </button>

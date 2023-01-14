@@ -64,3 +64,14 @@ export const moviesData = [
     trailer: "ybji16u608U",
   },
 ];
+
+export const users = [{ id: 1, name: "abdelakder" }];
+
+export const sayHello = () => {
+  console.log("hello world");
+};
+const sayHello2 = () => {
+  console.log("say hello 2");
+};
+
+export default sayHello2;

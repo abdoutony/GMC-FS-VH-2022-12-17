@@ -8,7 +8,7 @@ import AdminPageIndex from "./pages/admin";
 import { AdminLayout } from "./components/layouts/admin";
 import NotFoundPage from "./pages/404";
 import AdminTestPage from "./pages/admin/test";
-
+import PrivateRoute from "./components/private-route";
 function App() {
   return (
     <Router>
@@ -17,7 +17,14 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:id" element={<DetailsPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <AdminLayout />
+            </PrivateRoute>
+          }
+        >
           <Route path="movies" element={<AdminPageIndex />} />
           <Route path="test" element={<AdminTestPage />} />
         </Route>
