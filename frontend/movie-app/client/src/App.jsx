@@ -7,6 +7,7 @@ import LoginPage from "./pages/auth/login";
 import AdminPageIndex from "./pages/admin";
 import { AdminLayout } from "./components/layouts/admin";
 import NotFoundPage from "./pages/404";
+import AdminTestPage from "./pages/admin/test";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="movies" element={<AdminPageIndex />} />
+          <Route path="test" element={<AdminTestPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

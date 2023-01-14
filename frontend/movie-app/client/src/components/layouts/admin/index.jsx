@@ -25,6 +25,13 @@ export const AdminLayout = () => {
             </Link>
           </li>
 
+          <li>
+            <Link to="/admin/test" className="active">
+              <i className="bx bx-grid-alt" />
+              <span className="links_name">Test</span>
+            </Link>
+          </li>
+
           <li className="log_out">
             <button className="logoutBtn d-flex align-items-center">
               <i className="bx bx-log-out" />
