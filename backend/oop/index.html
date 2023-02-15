@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <h1>OOP</h1>
+</body>
+<script>
+    // oop
+    class Person{
+        constructor(name,age,cars){
+            this.nom=name
+            this.age = age
+            this.cars = cars
+        }
+        // methods 
+        printInfo =()=>{
+            console.log(`Nom : ${this.nom}
+            age: ${this.age}
+            `)
+        }
+    }
+    class Student extends Person{ 
+        constructor(name,age,cars,matricule){
+            super(name,age,cars)
+            this.matricule = matricule
+        }
+        getMatricule(){
+            return this.matricule
+        }
+    }
+    class Vehicule{
+        constructor(nom,marque,color){
+            this.nom =nom
+            this.marque = marque
+            this.color = color
+        }
+        details(){
+            return `Nom : ${this.nom}
+                    Marque: ${this.marque}
+                    Color: ${this.color}`
+        }
+    }
+
+    const myusers =[
+        {
+        "nom":"lounis",
+        "prenom":"abdelkader"
+    },
+    {
+        "nom":"hamdani",
+        "prenom":"hichem",
+        "age":"27"
+    },
+    {
+        "prenom":"ibrahim",
+        "age":"17"
+    }
+]
+
+    let person1 = new Person("Abdelkader",25)
+    let person2 = new Person("Hichem",27)
+    let vehicule1 = new Vehicule("Maruti","alto","Gray")
+    let vehicule2 = new Vehicule("207","peugot","White")
+    let arrV = [vehicule1,vehicule2]
+    let person3 = new Person("Ibrahim",17,arrV)
+    // person1.printInfo()
+    // person2.printInfo()
+    // console.log(person3)
+
+
+    let student = new Student("Hichem",27,arrV,161631076016)
+    console.log(student)
+    student.printInfo()
+</script>
+</html>
