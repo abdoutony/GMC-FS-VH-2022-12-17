@@ -1,8 +1,9 @@
 const express = require("express")
 require("dotenv").config()
 require("./config/db").connect()
+const apiRoutes = require("./routes")
 const bodyParser = require("body-parser")
-const {Exemple} = require("./models/exemple")
+
 const app = express()
 
 app.use(bodyParser.urlencoded({extended:true}))  // third partie middleware
@@ -12,26 +13,7 @@ app.use(bodyParser.json())
 app.get("/",(req,res)=>{
     res.send("Hello")
 })
-
-app.post("/exemple",async  (req,res)=>{
-     try{
-        const {title,description} = req.body
-        if(!title || !description){
-           return res.send("All fields are required")
-        }
-
-        const exemple = new Exemple({
-            title:title,
-            description:description
-        })
-
-        const savedUser = await exemple.save()
-        res.status(200).send(savedUser)
-
-     }catch(err){
-        res.status(500).send("server error")
-     }
-})
+app.use("/api",apiRoutes())
 
 
 const PORT =process.env.PORT
