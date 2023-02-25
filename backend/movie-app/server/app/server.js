@@ -3,11 +3,14 @@ require("dotenv").config()
 require("./config/db").connect()
 const apiRoutes = require("./routes")
 const bodyParser = require("body-parser")
+const cors = require("cors")
 
 const app = express()
 
 app.use(bodyParser.urlencoded({extended:true}))  // third partie middleware
 app.use(bodyParser.json())
+
+app.use(cors())
 
 
 app.get("/",(req,res)=>{

@@ -1,0 +1,18 @@
+[
+    {
+      "email": "abdouaallb@gmail.com",
+      "password": "$2a$12$57JxQuZjUY96u8v4toj3w.2fxfzq9aImhChjqGUzMvF1x9ShlT0kK",
+      "firstname": "Abdelkader",
+      "lastname": "Lounis",
+      "role":"admin",
+      "token":""
+    },
+    {
+        "email": "a@agmail.com",
+        "password": "$2a$12$57JxQuZjUY96u8v4toj3w.2fxfzq9aImhChjqGUzMvF1x9ShlT0kK",
+        "firstname": "Exemple",
+        "lastname": "Exemple",
+        "role":"user",
+        "token":""
+      }
+  ]
