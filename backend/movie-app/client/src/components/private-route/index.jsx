@@ -6,12 +6,12 @@ const PrivateRoute = ({children})=>{
     if(!localStorage.getItem("token")){
         return <Navigate to="/login" />
     }else{
-        const token = localStorage.getItem("token")
+        const token = JSON.parse(localStorage.getItem("token"))
         // validation de token
         const options = {
             url:"http://localhost:4000/api/auth/verifytoken",
             method:"GET",
-            header:{
+            headers:{
                 Accept:"application/json",
                 Authorization:token
             }

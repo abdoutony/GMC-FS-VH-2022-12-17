@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import "./style.css";
+import { logout } from "../../../services/auth.service";
 export const AdminLayout = () => {
   const handleSideBar = (e) => {
     let sidebar = document.querySelector(".sidebar");
@@ -27,7 +28,7 @@ export const AdminLayout = () => {
 
           <li className="log_out">
             <button className="logoutBtn d-flex align-items-center">
-              <i className="bx bx-log-out" />
+              <i className="bx bx-log-out" onClick={logout} />
               <span className="links_name">Log out</span>
             </button>
           </li>
