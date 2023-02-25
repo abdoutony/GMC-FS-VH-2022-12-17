@@ -4,7 +4,7 @@ import "./style.css"
 export default function MovieItem({ item }) {
     const navigate = useNavigate()
   return (
-    <div className="card" onClick={()=>navigate(`/movies/${item._id}`)}>
+    <div className="card mb-3" onClick={()=>navigate(`/movies/${item._id}`)}>
       <img src={item.poster} className="card-img-top movie-item-image" alt={item.title} />
     </div>
   );
